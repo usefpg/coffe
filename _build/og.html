@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: "Tajawal"; src: url("file:///C:/Users/DEll/AppData/Local/Temp/bcfonts/Tajawal-Bold.ttf"); font-weight: 700; }
+@font-face { font-family: "Tajawal"; src: url("file:///C:/Users/DEll/AppData/Local/Temp/bcfonts/Tajawal-ExtraBold.ttf"); font-weight: 800; }
+@font-face { font-family: "Playfair"; src: url("file:///C:/Users/DEll/AppData/Local/Temp/bcfonts/PlayfairDisplay.ttf"); font-weight: 400 900; }
+@font-face { font-family: "Inter"; src: url("file:///C:/Users/DEll/AppData/Local/Temp/bcfonts/Inter.ttf"); font-weight: 100 900; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; }
+body {
+  position: relative;
+  background: #1b0f09;
+  color: #f8efe2;
+  font-family: "Tajawal", sans-serif;
+  direction: rtl;
+}
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 82% 38%, rgba(227,178,95,.16), transparent 42%),
+    radial-gradient(circle at 12% 88%, rgba(181,101,43,.18), transparent 45%),
+    linear-gradient(120deg, #150c07 0%, #1e1009 46%, #2a170d 100%);
+}
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(227,178,95,.055) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 75% 75%, rgba(227,178,95,.045) 0 1px, transparent 1.6px);
+  background-size: 34px 34px, 46px 46px;
+  opacity: .8;
+}
+.frame {
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(227,178,95,.34);
+  border-radius: 8px;
+}
+.frame::before, .frame::after {
+  content: "✦";
+  position: absolute;
+  color: #e3b25f;
+  font-size: 16px;
+  opacity: .8;
+}
+.frame::before { top: -11px; left: 50%; transform: translateX(-50%); background: #1b0f09; padding: 0 12px; }
+.frame::after { bottom: -12px; left: 50%; transform: translateX(-50%); background: #1b0f09; padding: 0 12px; }
+.left {
+  position: absolute;
+  right: 70px;
+  top: 78px;
+  width: 660px;
+  z-index: 2;
+}
+.brandline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 34px;
+}
+.brandline svg { width: 42px; height: 42px; color: #e3b25f; }
+.brandline .en {
+  font-family: "Playfair", serif;
+  font-size: 23px;
+  letter-spacing: .32em;
+  color: #e3b25f;
+  direction: ltr;
+}
+.brandline .dot { width: 5px; height: 5px; border-radius: 50%; background: #b5652b; }
+.brandline .ar { font-size: 17px; color: #c9b7a4; letter-spacing: .02em; }
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 19px;
+  font-weight: 700;
+  color: #e3b25f;
+  letter-spacing: .02em;
+  margin-bottom: 18px;
+}
+.eyebrow::before { content: ""; width: 46px; height: 1px; background: rgba(227,178,95,.6); }
+h1 {
+  font-size: 92px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  margin-bottom: 24px;
+  text-shadow: 0 18px 50px rgba(0,0,0,.35);
+}
+h1 em { font-style: normal; color: #e3b25f; display: block; }
+p.tagline {
+  font-size: 27px;
+  line-height: 1.6;
+  color: #e6d6c4;
+  max-width: 610px;
+  margin-bottom: 34px;
+}
+.rule {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, #e3b25f, rgba(227,178,95,0));
+  margin-bottom: 24px;
+}
+.bottom {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 19px;
+  color: #c9b7a4;
+}
+.bottom .stars { color: #e3b25f; font-family: "Inter", sans-serif; font-size: 18px; letter-spacing: 2px; direction: ltr; }
+.bottom b { color: #f8efe2; font-weight: 700; }
+.image {
+  position: absolute;
+  left: 58px;
+  top: 62px;
+  width: 392px;
+  height: 506px;
+  z-index: 2;
+  border-radius: 220px 220px 14px 14px;
+  overflow: hidden;
+  border: 2px solid rgba(227,178,95,.55);
+  box-shadow: 0 40px 90px -30px rgba(0,0,0,.85);
+}
+.image img { width: 100%; height: 100%; object-fit: cover; }
+.image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(21,12,7,0) 48%, rgba(21,12,7,.55) 100%);
+}
+.stamp {
+  position: absolute;
+  z-index: 3;
+  left: 26px;
+  bottom: 44px;
+  width: 122px;
+  height: 122px;
+  border-radius: 50%;
+  border: 1px solid rgba(248,239,226,.65);
+  background: rgba(27,15,9,.72);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+  color: #f8efe2;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  transform: rotate(-8deg);
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+.stamp .star { color: #e3b25f; font-size: 16px; line-height: 1; }
+.stamp small { font-family: "Inter", sans-serif; font-size: 8px; letter-spacing: .18em; color: #e3b25f; direction: ltr; }
+.image .label {
+  position: absolute;
+  z-index: 3;
+  right: 20px;
+  bottom: 22px;
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  letter-spacing: .28em;
+  color: rgba(248,239,226,.72);
+  direction: ltr;
+  writing-mode: vertical-rl;
+}
+</style>
+</head>
+<body>
+  <div class="frame"></div>
+  <div class="left">
+    <div class="brandline">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 19h24v9a10 10 0 0 1-10 10h-4A10 10 0 0 1 10 28v-9Z"/>
+        <path d="M34 22h3a5 5 0 0 1 0 10h-3"/>
+        <path d="M16 13c-2-2.5 2-4 0-6M23 13c-2-2.5 2-4 0-6M30 13c-2-2.5 2-4 0-6"/>
+      </svg>
+      <span class="en">BEST COFFEE</span>
+      <span class="dot"></span>
+      <span class="ar">مقهى مصري · الرياض</span>
+    </div>
+    <div class="eyebrow">من القاهرة إلى الرياض</div>
+    <h1>مقهى<em>أحسن قهوة</em></h1>
+    <p class="tagline">قهوة على الرمل، سهلب بالقرفة، وجلسة تنسيك إنك في الرياض.</p>
+    <div class="rule"></div>
+    <div class="bottom">
+      <span class="stars">★★★★★</span>
+      <span><b>4.3</b> على Google</span>
+      <span class="dot"></span>
+      <span>يومياً حتى 2 صباحاً</span>
+    </div>
+  </div>
+  <div class="image">
+    <img src="../assets/img/hero-cup-900.webp" alt="">
+    <span class="label">CAIRO · RIYADH</span>
+  </div>
+  <div class="stamp">
+    <span class="star">✦</span>
+    <span>قهوة مصرية<br>على الرمل</span>
+    <small>SINCE 2024</small>
+  </div>
+</body>
+</html>

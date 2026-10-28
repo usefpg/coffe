@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: replace with the shop's real domain
+Sitemap: https://bestcoffee.example.com/sitemap.xml
